@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e3bef3229104c438838e9897dd2ec7, type: 3}
+  m_Name: NPC3Page1
+  m_EditorClassIdentifier: 
+  Date: James
+  Answer1: 0
+  Answer2: Ahah. This is a bit embarassing, but I really like woodcarving.
+  Answer3: Don't tell, but I actually don't like green clothes.
