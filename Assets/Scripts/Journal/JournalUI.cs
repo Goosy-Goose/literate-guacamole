@@ -5,10 +5,24 @@ using UnityEngine;
 public class JournalUI : MonoBehaviour
 {
     public Journal journal;
+    public Warning warningPanel;
+    public PageUI PageEntryPanel;
+    public PageHistoryUI PageHistoryPanel;
+
+    private void Start()
+    {
+        PageEntryPanel.gameObject.SetActive(false);
+        PageHistoryPanel.gameObject.SetActive(true);
+        PageHistoryPanel.LoadPage(journal.pages[journal.pages.Count - 1]);
+    }
 
     public void SubmitPage(PageEntry page)
     {
-        journal.pages.Add(page);
+        if (warningPanel.setWarning(page))
+        {
+            journal.pages.Add(page);
+        }
+            
     }
 
 

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Warning : MonoBehaviour
 {
-    public JournalUI JUI;
+    
     public GameObject WarningPanel;
     public Text WarningText;
     // Start is called before the first frame update
@@ -19,8 +19,14 @@ public class Warning : MonoBehaviour
         WarningPanel.SetActive(false);
     }
 
-    public void setWarning(PageEntry page)
+    public void ClosePanelButton()
     {
+        closePanel();
+    }
+
+    public bool setWarning(PageEntry page)
+    {
+        bool success = false;
         if (page.Answer1.ToString().Equals("none"))
         {
             WarningPanel.SetActive(true);
@@ -36,7 +42,9 @@ public class Warning : MonoBehaviour
         }
         else
         {
-            JUI.SubmitPage(page);
+            success = true;
         }
+
+        return success;
     }
 }
