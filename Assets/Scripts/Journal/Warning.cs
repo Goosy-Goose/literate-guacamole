@@ -11,15 +11,20 @@ public class Warning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        closePanel();
+        ClosePanel();
     }
 
-    void closePanel()
+    void ClosePanel()
     {
         WarningPanel.SetActive(false);
     }
 
-    public void setWarning(PageEntry page)
+    public void ClosePanelButton()
+    {
+        ClosePanel();
+    }
+
+    public bool SetWarning(PageEntry page)
     {
         if (page.Answer1.ToString().Equals("none"))
         {
@@ -36,7 +41,8 @@ public class Warning : MonoBehaviour
         }
         else
         {
-            JUI.SubmitPage(page);
+            return true;
         }
+        return false;
     }
 }

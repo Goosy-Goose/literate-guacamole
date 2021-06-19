@@ -9,15 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 807ab44d2799af243bc84b50c2fd7082, type: 3}
-  m_Name: Journal
+  m_Script: {fileID: 11500000, guid: 69e3bef3229104c438838e9897dd2ec7, type: 3}
+  m_Name: NPCJournal1_0
   m_EditorClassIdentifier: 
-  pages:
-  - Date: 06/17/2021
-    Answer1: 1
-    Answer2: 1
-    Answer3: 1
-  - Date: 06/18/2021
-    Answer1: 2
-    Answer2: asdf
-    Answer3: ffff
+  Date: NPCName1
+  Answer1: 5
+  Answer2: I like eating food.
+  Answer3: I don't like tomatoes.

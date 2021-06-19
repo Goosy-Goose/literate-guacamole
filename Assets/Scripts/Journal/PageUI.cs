@@ -7,7 +7,7 @@ using System;
 public class PageUI : MonoBehaviour
 {
     public JournalUI JUI;
-    public Warning warning;
+    
     public InputField inputFieldQ2, inputFieldQ3;
     public Text DateText;
 
@@ -16,7 +16,7 @@ public class PageUI : MonoBehaviour
 
     private void Start()
     {
-        DateText.text = DateTime.Now.ToString("MM/dd/yyyy");
+        DateText.text = Utility.GetDate();
         Q1Button("none");
     }
 
@@ -28,8 +28,8 @@ public class PageUI : MonoBehaviour
         page.Answer2 = inputFieldQ2.text;
         page.Answer3 = inputFieldQ3.text;
         page.Date = DateText.text;
-        warning.setWarning(page);
-        //JUI.SubmitPage(page);
+        JUI.SubmitPage(page);
+        
     }
 
 

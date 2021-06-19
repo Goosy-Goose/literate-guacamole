@@ -13,11 +13,4 @@ MonoBehaviour:
   m_Name: Journal
   m_EditorClassIdentifier: 
   pages:
-  - Date: 06/17/2021
-    Answer1: 1
-    Answer2: 1
-    Answer3: 1
-  - Date: 06/18/2021
-    Answer1: 2
-    Answer2: asdf
-    Answer3: ffff
+  - {fileID: 0}
