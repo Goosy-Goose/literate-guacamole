@@ -16,7 +16,7 @@ public class PageUI : MonoBehaviour
 
     private void Start()
     {
-        DateText.text = DateTime.Now.ToString("MM/dd/yyyy");
+        DateText.text = Utility.GetDate();
         Q1Button("none");
     }
 
@@ -30,6 +30,7 @@ public class PageUI : MonoBehaviour
         page.Date = DateText.text;
         
         JUI.SubmitPage(page);
+        
     }
 
 
