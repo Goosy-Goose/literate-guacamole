@@ -25,6 +25,7 @@ public class JournalUI : MonoBehaviour
         if (warningPanel.SetWarning(page)) {
             journal.pages.Add(page);
             DisplayPageEntry(false);
+
             DisplayPageHistory(page);
         }
         
@@ -41,6 +42,7 @@ public class JournalUI : MonoBehaviour
         }
         else
         {
+            pageIndex = pageCount;
             DisplayPageEntry(true);
         }
     }
@@ -76,11 +78,12 @@ public class JournalUI : MonoBehaviour
     int pageIndex;
     public void TurnPageForward()
     {
-        if(pageIndex < journal.pages.Count)
+        if(pageIndex < journal.pages.Count - 1)
         {
             pageIndex += 1;
             DisplayPageHistory(journal.pages[pageIndex]);
-        } else if( pageIndex < journal.pages.Count && ValidNewEntry()) {
+        } else if( pageIndex == journal.pages.Count - 1 && ValidNewEntry()) {
+            pageIndex += 1;
             DisplayPageEntry(true);
         }
     }

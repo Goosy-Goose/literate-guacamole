@@ -15,4 +15,9 @@ public class JournalNPC : MonoBehaviour
     {
         
     }
+
+    public void SetNPCJournal(Page page)
+    {
+
+    }
 }

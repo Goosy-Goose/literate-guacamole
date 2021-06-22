@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/JournalTesting.unity
+    guid: e0fc1a90145cc4e41adcdd99ab451c16
   m_configObjects: {}
