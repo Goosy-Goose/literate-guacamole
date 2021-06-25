@@ -9,8 +9,9 @@ public class JournalUI : MonoBehaviour
     public Warning warningPanel;
     public PageUI PageEntryPanel;
     public PageHistoryUI PageHistoryPanel;
+    public JournalNPC PageNPCPanel;
 
-
+    public GameObject ForwardButton, BackwardButton;
 
     private void Start()
     {
@@ -19,12 +20,12 @@ public class JournalUI : MonoBehaviour
 
 
 
-
     public void SubmitPage(PageEntry page)
     {
         if (warningPanel.SetWarning(page)) {
-            journal.pages.Add(page);
+            journal.AddPageEntry(page);
             DisplayPageEntry(false);
+            pageIndex = journal.pages.Count - 1;
             DisplayPageHistory(page);
         }
         
@@ -32,11 +33,35 @@ public class JournalUI : MonoBehaviour
 
     public void OpenJournal()
     {
+        if (journal.PlayerJournal){
+            OpenPlayerJournal();
+        }
+        else {
+            OpenNPCJournal();
+        }
+    }
+
+    public void OpenNPCJournal()
+    {
+        PageEntryPanel.gameObject.SetActive(false);
+        PageHistoryPanel.gameObject.SetActive(false);
+        PageNPCPanel.gameObject.SetActive(true);
+        ForwardButton.SetActive(false);
+        BackwardButton.SetActive(false);
+        PageNPCPanel.SetNPCJournal(journal.NPCPage);
+    }
+
+    public void OpenPlayerJournal()
+    {
+        PageNPCPanel.gameObject.SetActive(false);
+        ForwardButton.SetActive(true);
+        BackwardButton.SetActive(true);
         int pageCount = journal.pages.Count;
-        if(pageCount > 0 && !ValidNewEntry())
+        if (pageCount > 0 && !ValidNewEntry())
         {
             pageIndex = pageCount - 1;
             PageEntry lastEntry = journal.pages[pageCount - 1];
+            DisplayPageEntry(false);
             DisplayPageHistory(lastEntry);
         }
         else
@@ -45,6 +70,7 @@ public class JournalUI : MonoBehaviour
             DisplayPageEntry(true);
         }
     }
+
     private bool ValidNewEntry()
     {
         return journal.pages[journal.pages.Count - 1].Date != Utility.GetDate();

@@ -6,23 +6,11 @@ using UnityEngine.UI;
 public class JournalNPC : MonoBehaviour
 {
 
-    public Page NPCPage;
-    public Text LeftText, RightText;
+    public Text LeftText, RightText, NameText;
 
-    // Start is called before the first frame update
-    void Start()
+    public void SetNPCJournal(Page NPCPage)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void SetNPCJournal()
-    {
+        NameText.text = NPCPage.GetName();
         LeftText.text = NPCPage.GetLeftPage();
         RightText.text = NPCPage.GetRightPage();
     }

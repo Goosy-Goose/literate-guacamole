@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Page", menuName = "Journal/Page")]
 public class Page : ScriptableObject
 {
+
+    public string Name;
     [TextArea] public string[] LeftPage;
     [TextArea] public string[] RightPage;
     public bool[] LeftUnlocked;
@@ -17,6 +19,11 @@ public class Page : ScriptableObject
     public string GetRightPage()
     {
         return GetPage(RightPage, RightUnlocked);
+    }
+
+    public string GetName()
+    {
+        return Name;
     }
 
 
