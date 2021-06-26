@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Page", menuName = "Journal/Page")]
-public class Page : ScriptableObject
+public class NPCJournal : ScriptableObject
 {
 
     public string Name;
@@ -11,6 +11,8 @@ public class Page : ScriptableObject
     [TextArea] public string[] RightPage;
     public bool[] LeftUnlocked;
     public bool[] RightUnlocked;
+
+    public MatchingItem[] MatchingItems;
 
     public string GetLeftPage()
     {
@@ -55,4 +57,14 @@ public class Page : ScriptableObject
     }
 
     
+}
+
+[System.Serializable]
+public class MatchingItem
+{
+    public string Name;
+    public GameObject Icon;
+    public GameObject Item;
+    public bool matched;
+    public int RightPageIndex = -1;
 }

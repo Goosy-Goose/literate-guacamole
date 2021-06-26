@@ -19,5 +19,11 @@ MonoBehaviour:
   - 'Comfort Items:'
   - 'Favorite Pastimes:'
   RightPage: []
-  LeftUnlocked: 
+  LeftUnlocked: 00000000
   RightUnlocked: 
+  MatchingItems:
+  - Name: 
+    Icon: {fileID: 0}
+    Item: {fileID: 0}
+    matched: 0
+    RightPageIndex: 0

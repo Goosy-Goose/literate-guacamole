@@ -22,5 +22,16 @@ MonoBehaviour:
   - In west
   - Philadelphia born
   - and raised
-  LeftUnlocked: 010001
+  LeftUnlocked: 01000101
   RightUnlocked: 000100
+  MatchingItems:
+  - Name: Ball
+    Icon: {fileID: 0}
+    Item: {fileID: 0}
+    matched: 0
+    RightPageIndex: -1
+  - Name: Triangle
+    Icon: {fileID: 0}
+    Item: {fileID: 0}
+    matched: 0
+    RightPageIndex: -1

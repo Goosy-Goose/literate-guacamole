@@ -128,7 +128,7 @@ public class JournalUI : MonoBehaviour
 
     public void CloseJournal()
     {
-
+        UnityEngine.SceneManagement.SceneManager.LoadScene(journal.ReturnScene);
     }
 
 //Button methods
