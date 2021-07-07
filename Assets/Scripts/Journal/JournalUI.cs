@@ -18,37 +18,17 @@ public class JournalUI : MonoBehaviour
         OpenJournal();
     }
 
-
-
-    public void SubmitPage(PageEntry page)
-    {
-        if (warningPanel.SetWarning(page)) {
-            journal.AddPageEntry(page);
-            DisplayPageEntry(false);
-            pageIndex = journal.pages.Count - 1;
-            DisplayPageHistory(page);
-        }
-        
-    }
-
+//OPEN DIFFERENT JOURNAL METHODS
     public void OpenJournal()
     {
-        if (journal.PlayerJournal){
+        if (journal.PlayerJournal)
+        {
             OpenPlayerJournal();
         }
-        else {
+        else
+        {
             OpenNPCJournal();
         }
-    }
-
-    public void OpenNPCJournal()
-    {
-        PageEntryPanel.gameObject.SetActive(false);
-        PageHistoryPanel.gameObject.SetActive(false);
-        PageNPCPanel.gameObject.SetActive(true);
-        ForwardButton.SetActive(false);
-        BackwardButton.SetActive(false);
-        PageNPCPanel.SetNPCJournal(journal.NPCPage);
     }
 
     public void OpenPlayerJournal()
@@ -76,6 +56,36 @@ public class JournalUI : MonoBehaviour
         return journal.pages[journal.pages.Count - 1].Date != Utility.GetDate();
     }
 
+    public void OpenNPCJournal()
+    {
+        PageEntryPanel.gameObject.SetActive(false);
+        PageHistoryPanel.gameObject.SetActive(false);
+        PageNPCPanel.gameObject.SetActive(true);
+        ForwardButton.SetActive(false);
+        BackwardButton.SetActive(false);
+        PageNPCPanel.SetNPCJournal(journal.NPCPage);
+    }
+
+
+    public void SubmitPage(PageEntry page)
+    {
+        if (warningPanel.SetWarning(page)) {
+            journal.AddPageEntry(page);
+            DisplayPageEntry(false);
+            pageIndex = journal.pages.Count - 1;
+            DisplayPageHistory(page);
+        }
+        
+    }
+
+    
+
+    
+
+    
+
+    
+//DISPLAY METHODS
     private void DisplayPageHistory(PageEntry page)
     {
         PageHistoryPanel.LoadPage(page);
@@ -128,7 +138,7 @@ public class JournalUI : MonoBehaviour
 
     public void CloseJournal()
     {
-
+        UnityEngine.SceneManagement.SceneManager.LoadScene(journal.ReturnScene);
     }
 
 //Button methods

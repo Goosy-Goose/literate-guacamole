@@ -9,8 +9,8 @@ public class Journal : ScriptableObject
 
     public List<PageEntry> pagePool = new List<PageEntry>();
 
-    public List<Page> NPCPages = new List<Page>();
-    public Page NPCPage;
+    public List<NPCJournal> NPCPages = new List<NPCJournal>();
+    public NPCJournal NPCPage;
     public bool PlayerJournal;
     public string ReturnScene;
 

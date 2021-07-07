@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69e3bef3229104c438838e9897dd2ec7, type: 3}
-  m_Name: NPC1
+  m_Name: NPC4
   m_EditorClassIdentifier: 
-  Name: Tabby
+  Name: Casey
   LeftPage:
-  - "Likes: \n\tCats, especially tabby cats.\n\t\n"
-  - "Dislikes: \n\tCilantro\n"
-  - "Comfort Item:\n\tA pen that Tabby found in a hole many years ago.\n"
-  - "Favorite Pastime:\n\tWoodcarving"
+  - 'Likes: '
+  - 'Dislikes:'
+  - 'Comfort Items:'
+  - "Favorite Pastimes:\n\t"
   RightPage:
-  - In west
-  - Philadelphia born
-  - and raised
+  - 
+  - 
+  - 
   LeftUnlocked: 01010101
-  RightUnlocked: 000100
+  RightUnlocked: 000000
   ItemsToMatch: []

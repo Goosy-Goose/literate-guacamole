@@ -1,14 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Loading : MonoBehaviour
 {
 
     public Journal journal;
+    public bool PlayerJournal;
+    public NPCJournal NPCPage;
+
     public void LoadingButton(string sceneName)
     {
-        journal.ReturnScene = sceneName;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        journal.ReturnScene = SceneManager.GetActiveScene().name;
+        if (PlayerJournal)
+        {
+            journal.PlayerJournal = true;
+        }
+        else
+        {
+            journal.PlayerJournal = false;
+            journal.NPCPage = NPCPage;
+        }
+        SceneManager.LoadScene(sceneName);
     }
 }

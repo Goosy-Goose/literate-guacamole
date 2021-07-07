@@ -17,7 +17,11 @@ MonoBehaviour:
   - 'Likes: '
   - 'Dislikes:'
   - 'Comfort Items:'
-  - 'Favorite Pastimes:'
-  RightPage: []
-  LeftUnlocked: 
-  RightUnlocked: 
+  - "Favorite Pastimes:\n\tMaking Paints\n"
+  RightPage:
+  - 
+  - 
+  - 
+  LeftUnlocked: 01010101
+  RightUnlocked: 000000
+  ItemsToMatch: []

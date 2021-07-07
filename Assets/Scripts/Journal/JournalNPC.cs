@@ -8,7 +8,7 @@ public class JournalNPC : MonoBehaviour
 
     public Text LeftText, RightText, NameText;
 
-    public void SetNPCJournal(Page NPCPage)
+    public void SetNPCJournal(NPCJournal NPCPage)
     {
         NameText.text = NPCPage.GetName();
         LeftText.text = NPCPage.GetLeftPage();
