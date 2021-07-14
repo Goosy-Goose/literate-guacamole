@@ -7,11 +7,15 @@ public class MoveNPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPP
     [SerializeField] private float speed = 1;
     [SerializeField] private Vector2 point;
     float t;
+    float waitTime;
+    float slowed;
 
     // Start is called before the first frame update
     void Start()
     {
         point = new Vector2(Random.Range(-8,8), 3);
+        waitTime = Random.Range(7, 17);
+        slowed = Random.Range(15, 25);
     }
 
     // Update is called once per frame
@@ -19,11 +23,12 @@ public class MoveNPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPP
     {
         t += Time.deltaTime * speed;
 
-        transform.position = Vector2.MoveTowards(transform.position, point, t/15);
+        transform.position = Vector2.MoveTowards(transform.position, point, t/slowed);
 
-        if (t >= 10)
+        if (t >= waitTime)
         {
             point = new Vector2(Random.Range(-8, 6), Random.Range(-3, 3));
+            waitTime = Random.Range(7, 17);
             t = 0;
         }
     }

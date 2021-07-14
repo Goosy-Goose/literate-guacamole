@@ -9,12 +9,16 @@ public class Utility
     {
         return DateTime.Now.ToString("MM/dd/yyyy");
     }
-    /*
-    public static void Placeholder()
+    
+
+    public static List<T> GetList<T>(T[] array)
     {
-        PageEntryPanel.gameObject.SetActive(false);
-        PageHistoryPanel.gameObject.SetActive(true);
-        PageHistoryPanel.LoadPage(journal.pages[journal.pages.Count - 1]);
-    }*/
+        List<T> list = new List<T>();
+        for(int i=0; i<array.Length; i += 1)
+        {
+            list.Add(array[i]);
+        }
+        return list;
+    }
 
 }
