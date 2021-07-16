@@ -8,6 +8,7 @@ public class MatchingGame : MonoBehaviour
     public NPCJournal[] NPCJournals;
     List<NPCJournal> ActiveJournals = new List<NPCJournal>();
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +34,7 @@ public class MatchingGame : MonoBehaviour
             Vector2 pos = new Vector2(-10, 3);
             GameObject newNPC = Instantiate(NPCPrefab, pos, Quaternion.identity);
             int index = Random.Range(0, available.Count);
-            newNPC.GetComponentInChildren<NPCJournalIcon>().NPCPage = available[index];
+            newNPC.GetComponent<NPC>().SetupNPC(available[index]);
             available.RemoveAt(index);
             
         }

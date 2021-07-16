@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3814869182031894248}
   m_Layer: 0
-  m_Name: MatchingItem1
+  m_Name: Matching Item 1
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 5168173465814036489}
   - component: {fileID: 6622288215893846357}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ Transform:
   m_LocalScale: {x: 0.4349, y: 0.9838, z: 1}
   m_Children: []
   m_Father: {fileID: 747507877465353424}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6622288215893846357
 SpriteRenderer:
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 2939565617096927767}
   - component: {fileID: 597147205593102912}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Thought Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ Transform:
   m_LocalScale: {x: 1.2565, y: 1.1796, z: 1}
   m_Children: []
   m_Father: {fileID: 747507877465353424}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &597147205593102912
 SpriteRenderer:
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 1199946230711253716}
   - component: {fileID: 1893642363978322349}
   m_Layer: 0
-  m_Name: Isometric Diamond
+  m_Name: NPC Journal Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -319,7 +319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54e3e65f85d5cb34b9a57bde3a7b7739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NPCPage: {fileID: 11400000, guid: 1adcc70a7ab9abd4fa87941376d9d0ad, type: 2}
 --- !u!1 &6618371468643351492
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8708991207605602016}
   m_Layer: 0
-  m_Name: MatchingItem2
+  m_Name: Matching Item 2
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -378,8 +377,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2939565617096927767}
   - {fileID: 5168173465814036489}
+  - {fileID: 2939565617096927767}
   - {fileID: 6827431093438104241}
   - {fileID: 3814869182031894248}
   - {fileID: 8708991207605602016}
@@ -402,3 +401,4 @@ MonoBehaviour:
   point: {x: 0, y: 0}
   MatchingItem1: {fileID: 3814869182031894248}
   MatchingItem2: {fileID: 8708991207605602016}
+  journalIcon: {fileID: 1893642363978322349}

@@ -24,14 +24,14 @@ MonoBehaviour:
   - 
   LeftUnlocked: 01010101
   RightUnlocked: 000000
-  MatchingItem:
-  - Name: 
-    Icon: {fileID: 0}
-    Item: {fileID: 0}
+  MatchingPair:
+  - Name: Item 10
+    Icon: {fileID: 5571764215159392882, guid: 4701a564f8df1c74fbaab02fa25a2148, type: 3}
+    Item: {fileID: 3259342531174280918, guid: 13198f6af86c0fa43b40ee3bcfab06f6, type: 3}
     Matched: 0
     RightPageIndex: 0
-  - Name: 
-    Icon: {fileID: 0}
-    Item: {fileID: 0}
+  - Name: Item 11
+    Icon: {fileID: 8838127059199866250, guid: f24ec1baba162394bb8abc416793b859, type: 3}
+    Item: {fileID: 807474069184177278, guid: 027e4f0530ff9fc4e8fe842a0dcbd3b5, type: 3}
     Matched: 0
     RightPageIndex: 0

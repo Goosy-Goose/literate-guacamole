@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCJournalIcon : SpriteTouch
 {
 
-    public NPCJournal NPCPage;
+    private NPCJournal NPCPage;
     protected override void MouseUP()
     {
         Loading loading = FindObjectOfType<Loading>();
@@ -14,5 +14,9 @@ public class NPCJournalIcon : SpriteTouch
         loading.LoadingButton("JournalTesting");
     }
 
+    public void SetNPCJournal(NPCJournal journal)
+    {
+        NPCPage = journal;
+    }
 
 }

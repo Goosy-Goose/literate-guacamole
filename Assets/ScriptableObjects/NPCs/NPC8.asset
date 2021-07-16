@@ -17,4 +17,14 @@ MonoBehaviour:
   RightPage: []
   LeftUnlocked: 
   RightUnlocked: 
-  ItemsToMatch: []
+  MatchingPair:
+  - Name: 
+    Icon: {fileID: 0}
+    Item: {fileID: 0}
+    Matched: 0
+    RightPageIndex: 0
+  - Name: 
+    Icon: {fileID: 0}
+    Item: {fileID: 0}
+    Matched: 0
+    RightPageIndex: 0

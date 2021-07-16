@@ -11,6 +11,8 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
     float slowed;
 
     public Transform MatchingItem1, MatchingItem2;
+    public NPCJournalIcon journalIcon;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,9 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
 
     public void SetupNPC(NPCJournal npc)
     {
-
+        journalIcon.SetNPCJournal(npc);
+        GameObject[] matchingIcons = npc.GetMatchingIcons();
+        GameObject icon1 = Instantiate(matchingIcons[0], MatchingItem1);
+        GameObject icon2 = Instantiate(matchingIcons[1], MatchingItem2);
     }
 }
