@@ -10,14 +10,16 @@ public class MatchItem : SpriteTouch
 
     protected override void MouseUP()
     {
-        //transform.position = Vector2.MoveTowards(transform.position, BoardPos, Time.deltaTime);
-        throw new System.NotImplementedException();
+        
+        transform.position = (Vector3)BoardPos + transform.position.z * Vector3.forward;
+        
+
     }
 
     private void OnMouseDown()
     {
         TouchOffset = transform.position - Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-        BoardPos = transform.position;
+        
         Debug.Log(BoardPos + "    boardpos  ");
         Debug.Log(TouchOffset + "   offset");
     }
@@ -36,7 +38,7 @@ public class MatchItem : SpriteTouch
     // Start is called before the first frame update
     void Start()
     {
-        
+        BoardPos = transform.position;
     }
 
 }

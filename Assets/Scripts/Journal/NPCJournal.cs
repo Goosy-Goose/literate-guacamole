@@ -12,7 +12,7 @@ public class NPCJournal : ScriptableObject
     public bool[] LeftUnlocked;
     public bool[] RightUnlocked;
 
-    public MatchingIcon[] MatchingIcons;
+    public MatchingItem[] MatchingItem;
 
 
     private string GetText(string text, bool isUnlocked)

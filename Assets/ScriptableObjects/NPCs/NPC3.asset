@@ -24,4 +24,14 @@ MonoBehaviour:
   - 
   LeftUnlocked: 01010101
   RightUnlocked: 000000
-  ItemsToMatch: []
+  MatchingItem:
+  - Name: 
+    Icon: {fileID: 0}
+    Item: {fileID: 0}
+    Matched: 0
+    RightPageIndex: 0
+  - Name: 
+    Icon: {fileID: 0}
+    Item: {fileID: 0}
+    Matched: 0
+    RightPageIndex: 0

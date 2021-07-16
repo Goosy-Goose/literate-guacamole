@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveNPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING (how???)
+public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING (how???)
 {
     [SerializeField] private float speed = 1;
     [SerializeField] private Vector2 point;
     float t;
     float waitTime;
     float slowed;
+
+    public Transform MatchingItem1, MatchingItem2;
 
     // Start is called before the first frame update
     void Start()
@@ -31,5 +33,10 @@ public class MoveNPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPP
             waitTime = Random.Range(7, 17);
             t = 0;
         }
+    }
+
+    public void SetupNPC(NPCJournal npc)
+    {
+
     }
 }
