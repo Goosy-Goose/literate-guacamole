@@ -14,5 +14,10 @@ public class NPCJournalIcon : SpriteTouch
         loading.LoadingButton("JournalTesting");
     }
 
+    public void SetNPCJournal(NPCJournal journal)
+    {
+        NPCPage = journal;
+    }
+
 
 }

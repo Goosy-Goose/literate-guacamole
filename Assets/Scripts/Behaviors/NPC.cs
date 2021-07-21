@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveNPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING (how???)
+public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING (how???)
 {
     [SerializeField] private float speed = 1;
     [SerializeField] private Vector2 point;
@@ -10,10 +10,13 @@ public class MoveNPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPP
     float waitTime;
     float slowed;
 
+    public Transform MatchingItem1, MatchingItem2;
+    public NPCJournalIcon journalIcon;
+
     // Start is called before the first frame update
     void Start()
     {
-        point = new Vector2(Random.Range(-8,8), 3);
+        point = new Vector2(Random.Range(-8,6), Random.Range(-3, 3));
         waitTime = Random.Range(7, 17);
         slowed = Random.Range(15, 25);
     }
@@ -32,4 +35,13 @@ public class MoveNPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPP
             t = 0;
         }
     }
+
+    public void SetupNPC(NPCJournal npc)
+    {
+        journalIcon.SetNPCJournal(npc);
+        GameObject[] matchingIcons = npc.GetMatchingIcons();
+        GameObject icon1 = Instantiate(matchingIcons[0], MatchingItem1);
+        GameObject icon2 = Instantiate(matchingIcons[1], MatchingItem2);
+    }
+
 }

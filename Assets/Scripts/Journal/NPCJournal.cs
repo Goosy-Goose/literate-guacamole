@@ -12,7 +12,7 @@ public class NPCJournal : ScriptableObject
     public bool[] LeftUnlocked;
     public bool[] RightUnlocked;
 
-    public MatchingIcon[] MatchingIcons;
+    public MatchPair[] MatchingPair;
 
 
     private string GetText(string text, bool isUnlocked)
@@ -58,7 +58,25 @@ public class NPCJournal : ScriptableObject
     }
 
 
-    
+    public GameObject[] GetMatchingIcons()
+    {
+        GameObject[] matchingIcons = new GameObject[2];
+        if (MatchingPair.Length == 2)
+        {
+            matchingIcons[0] = MatchingPair[0].Icon;
+            matchingIcons[1] = MatchingPair[1].Icon;
+        }
+        else if (MatchingPair.Length == 1)
+        {
+            //return one;
+        }
+        else
+        {
+            //pick two randomly to return;
+        }
+
+        return matchingIcons;
+    }
 
 
     
@@ -66,12 +84,4 @@ public class NPCJournal : ScriptableObject
     
 }//END OF CLASS
 
-[System.Serializable]
-public class MatchingItem
-{
-    public string Name;
-    public GameObject Icon; //icon in the thought bubble
-    public GameObject Item; //item being bought
-    public bool Matched;
-    public int RightPageIndex = -1;
-}
+

@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   journal: {fileID: 11400000, guid: 7e8fe558b274bd440954a7a742368cc7, type: 2}
-  PlayerJournal: 0
+  PlayerJournal: 1
   NPCPage: {fileID: 11400000, guid: d22922480e1cae849a1bf0b82100e8ef, type: 2}
 --- !u!4 &545796440
 Transform:

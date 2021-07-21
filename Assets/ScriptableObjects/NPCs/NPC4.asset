@@ -24,4 +24,14 @@ MonoBehaviour:
   - 
   LeftUnlocked: 01010101
   RightUnlocked: 000000
-  ItemsToMatch: []
+  MatchingPair:
+  - Name: Item 6
+    Icon: {fileID: 5339746376860689498, guid: 901e6c72bd4a6604c8c3c168b85a46a0, type: 3}
+    Item: {fileID: 4466769377596933018, guid: 52aebcc2c967995468f1a7428e02687b, type: 3}
+    Matched: 0
+    RightPageIndex: 0
+  - Name: Item 7
+    Icon: {fileID: 8515570557532065011, guid: ef440e0765c229c468f75ae8ff7ff6a3, type: 3}
+    Item: {fileID: 5441654663335384034, guid: 88f0edbe8a236ff448e425301412f851, type: 3}
+    Matched: 0
+    RightPageIndex: 0
