@@ -34,6 +34,8 @@ public class MatchingGame : MonoBehaviour
             GameObject newNPC = Instantiate(NPCPrefab, pos, Quaternion.identity);
             int index = Random.Range(0, available.Count);
             newNPC.GetComponent<NPC>().SetupNPC(available[index]);
+            ActiveJournals.Add(available[index]);
+
             available.RemoveAt(index);
             
         }

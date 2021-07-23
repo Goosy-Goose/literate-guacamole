@@ -13,6 +13,8 @@ public class Journal : ScriptableObject
     public NPCJournal NPCPage;
     public bool PlayerJournal;
     public string ReturnScene;
+    public List<NPCJournal> MatchGameNPCs;
+    public bool MatchGameReturn;
 
 
 

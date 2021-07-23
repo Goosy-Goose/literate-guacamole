@@ -14,6 +14,10 @@ public class NPCJournal : ScriptableObject
 
     public MatchPair[] MatchingPair;
 
+    public GameObject NPCBody;
+
+    public Vector2 LastStandingPos;
+
 
     private string GetText(string text, bool isUnlocked)
     {
@@ -77,6 +81,7 @@ public class NPCJournal : ScriptableObject
 
         return matchingIcons;
     }
+
 
 
     

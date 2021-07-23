@@ -35,3 +35,4 @@ MonoBehaviour:
     Item: {fileID: 6730553931354932065, guid: 2e7ad1875660f4546a81c1c0947b2436, type: 3}
     Matched: 0
     RightPageIndex: 0
+  NPCBody: {fileID: 6471076760999372792, guid: e3abf948699718146ad065e2efee3cf6, type: 3}
