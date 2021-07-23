@@ -21,6 +21,7 @@ public class Loading : MonoBehaviour
         {
             journal.PlayerJournal = false;
             journal.NPCPage = NPCPage;
+            journal.MatchGameReturn = true;
         }
         SceneManager.LoadScene(sceneName);
     }

@@ -64,6 +64,7 @@ public class JournalUI : MonoBehaviour
         ForwardButton.SetActive(false);
         BackwardButton.SetActive(false);
         PageNPCPanel.SetNPCJournal(journal.NPCPage);
+        
     }
 
 
@@ -138,6 +139,14 @@ public class JournalUI : MonoBehaviour
 
     public void CloseJournal()
     {
+        if (journal.ReturnScene.Equals("Matching")) 
+        {
+            journal.MatchGameReturn = true;
+        }
+        else
+        {
+            journal.MatchGameReturn = false;
+        }
         UnityEngine.SceneManagement.SceneManager.LoadScene(journal.ReturnScene);
     }
 
