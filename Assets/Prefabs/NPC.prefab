@@ -158,8 +158,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1969205561
+  m_SortingLayer: -1
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847,
     type: 3}
@@ -243,8 +243,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1969205561
+  m_SortingLayer: -1
   m_SortingOrder: 2
   m_Sprite: {fileID: 3625043607559282579, guid: 045b15ec09bba42448d89db77fa6f20a,
     type: 3}
@@ -377,4 +377,5 @@ MonoBehaviour:
   MatchingItem1: {fileID: 9147808263532030116}
   MatchingItem2: {fileID: 3602521304269525989}
   Body: {fileID: 5168173465814036489}
+  Bubble: {fileID: 2939565617096927767}
   journalIcon: {fileID: 1893642363978322349}

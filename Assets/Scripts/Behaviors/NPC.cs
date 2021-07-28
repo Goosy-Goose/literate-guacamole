@@ -10,7 +10,7 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
     float waitTime;
     float slowed;
 
-    public Transform MatchingItem1, MatchingItem2, Body;
+    public Transform MatchingItem1, MatchingItem2, Body, Bubble;
     public NPCJournalIcon journalIcon;
 
 
@@ -20,6 +20,7 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
         point = new Vector2(Random.Range(-8,6), Random.Range(-3, 3));
         waitTime = Random.Range(7, 17);
         slowed = Random.Range(15, 25);
+        
     }
 
     // Update is called once per frame
@@ -35,6 +36,19 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
             waitTime = Random.Range(7, 17);
             t = 0;
         }
+
+        SetZdepth();
+    }
+
+    void SetZdepth()
+    {
+        Vector3 pos = transform.position;
+        transform.position = new Vector3(pos.x, pos.y, pos.y);
+    }
+
+
+    private void OnMouseDown()
+    {
     }
 
     public void SetupNPC(NPCJournal npc)

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MatchingIcon : MonoBehaviour
 {
+    public MatchItem.ItemTypes ItemType;
     // Start is called before the first frame update
     void Start()
     {

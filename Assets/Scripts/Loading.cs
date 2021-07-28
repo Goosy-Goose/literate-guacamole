@@ -20,8 +20,8 @@ public class Loading : MonoBehaviour
         else
         {
             journal.PlayerJournal = false;
+            journal.PlayerJournal = false;
             journal.NPCPage = NPCPage;
-            journal.MatchGameReturn = true;
         }
         SceneManager.LoadScene(sceneName);
     }
