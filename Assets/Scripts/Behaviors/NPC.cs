@@ -35,6 +35,15 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
             waitTime = Random.Range(7, 17);
             t = 0;
         }
+
+        SetZdepth();
+    }
+
+    void SetZdepth()
+    {
+        Vector3 pos = transform.position;
+        float offset = 0;
+        transform.position = new Vector3(pos.x, pos.y, pos.y + offset);
     }
 
     public void SetupNPC(NPCJournal npc)

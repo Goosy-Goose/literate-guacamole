@@ -8,10 +8,19 @@ public class MatchItem : SpriteTouch
     Vector2 BoardPos;
     Vector2 TouchOffset;
 
+    public enum ItemTypes
+    {
+        type1,
+        type2,
+        type3,
+        type4
+    }
+    public ItemTypes ItemType;
+
     protected override void MouseUP()
     {
         transform.position = BoardPos;
-        throw new System.NotImplementedException();
+        
     }
 
     private void OnMouseDown()

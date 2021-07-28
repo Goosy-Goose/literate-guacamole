@@ -12,9 +12,9 @@ public class MatchingGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        journal.MatchGameReturn = false;
+        
         LoadNPC();
-       
+        journal.MatchGameReturn = false;
     }
 
     
@@ -25,6 +25,16 @@ public class MatchingGame : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void test(ref int something)
+    {
+
+    }
+
+    private void LoadMatchItems()
+    {
+
     }
 
     private void LoadNPC()
@@ -48,9 +58,28 @@ public class MatchingGame : MonoBehaviour
                 ActiveJournals.Add(available[index]);
                 available.RemoveAt(index);
 
+
             }
+            journal.MatchGameNPCs = ActiveJournals;
         }
     }
+    public void LoadNPCJournalButton(NPCJournal NPCPage)
+    {
+        
+        journal.MatchGameReturn = true;
+        Loading loading = FindObjectOfType<Loading>();
+        loading.NPCPage = NPCPage;
+        loading.PlayerJournal = false;
 
+        NPC[] npcs = FindObjectsOfType<NPC>();
+        foreach(NPC npc in npcs)
+        {
+            GameObject gameObject = npc.gameObject;
+            Vector2 pos = gameObject.transform.position;
+            npc.journalIcon.NPCPage.LastStandingPos = pos;
+        }
+
+        loading.LoadingButton("JournalTesting");
+    }
 
 }
