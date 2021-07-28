@@ -20,7 +20,7 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
         point = new Vector2(Random.Range(-8,6), Random.Range(-3, 3));
         waitTime = Random.Range(7, 17);
         slowed = Random.Range(15, 25);
-        
+        Bubble.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -49,6 +49,7 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
 
     private void OnMouseDown()
     {
+        Bubble.gameObject.SetActive(true);
     }
 
     public void SetupNPC(NPCJournal npc)
