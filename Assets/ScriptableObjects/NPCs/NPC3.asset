@@ -14,25 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Mark
   LeftPage:
-  - 'Likes: '
-  - 'Dislikes:'
-  - 'Comfort Items:'
-  - "Favorite Pastimes:\n\t"
+  - "Likes: \n\tOld books that show signs of previous owners"
+  - "Dislikes:\n\tGreasy food"
+  - "Comfort Item:\n\tA stuffed octopus"
+  - "Favorite Pastimes:\n\tReading in low candlelight"
   RightPage:
-  - 
-  - 
-  - 
+  - '"I want to give my friend a necklace to show my appreciation."'
+  - "\"Candy would be so good right now. I\u2019m just feeling some craving for sweets.\""
+  - Mark will usually spend evenings curled up on a plush couch reading used book.
+    He says the love and care the book's owners had shows through in the way the
+    books spine is barely holding up, or the way the pages are crinkled.
   LeftUnlocked: 01010101
-  RightUnlocked: 000000
+  RightUnlocked: 010101
   MatchingPair:
-  - Name: Item 4
+  - Name: Necklace
     Icon: {fileID: 1551501084262189183, guid: 6bb5a8e5a3e7f564e9865e5ed4ce0f44, type: 3}
     Item: {fileID: 98143410834256935, guid: 04541fdd1391aa047ab7a1ca354f34eb, type: 3}
     Matched: 0
     RightPageIndex: 0
-  - Name: Item 5
+  - Name: Candy
     Icon: {fileID: 2354854137528886214, guid: 21f09560f62811b40a37a85ec22830e2, type: 3}
     Item: {fileID: 986654574054035824, guid: abc7b60eea45ebc419411211b0e755b2, type: 3}
     Matched: 0
     RightPageIndex: 0
   NPCBody: {fileID: 6046307634257307130, guid: f6a12827ff7b15446b83caddbb3cc138, type: 3}
+  LastStandingPos: {x: 0, y: 0}

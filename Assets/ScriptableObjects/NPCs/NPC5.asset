@@ -19,20 +19,23 @@ MonoBehaviour:
   - 'Comfort Items:'
   - "Favorite Pastimes:\n\t"
   RightPage:
-  - 
-  - 
+  - '"I want to give my friend a pretty ribbon to tie any bundles together with a
+    fun little flourish."'
+  - "\"Recently, I havent been as motivated to do music as I used to be and I\u2019m
+    looking to learn a new instrument to bring it back. Maybe a violin?\""
   - 
   LeftUnlocked: 01010101
   RightUnlocked: 000000
   MatchingPair:
-  - Name: Item 8
+  - Name: Ribbon
     Icon: {fileID: 1323183575174342229, guid: 98d03a0dd2f55514d87689f1fab1fe7e, type: 3}
     Item: {fileID: 252429944515556761, guid: 82c2c5ba3da3b364c87b060a91f538ed, type: 3}
     Matched: 0
     RightPageIndex: 0
-  - Name: Item 9
+  - Name: Violin
     Icon: {fileID: 3240049704664419194, guid: af65191adcdb2e3449da0e2e9795f0a0, type: 3}
     Item: {fileID: 2670935401892216511, guid: 53c9b938b5aba344ba2eb4ada7a786d6, type: 3}
     Matched: 0
     RightPageIndex: 0
   NPCBody: {fileID: 7572904634044954037, guid: 02479cd761c49da498b42968f86622ba, type: 3}
+  LastStandingPos: {x: 0, y: 0}

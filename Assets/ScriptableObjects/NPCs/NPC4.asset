@@ -14,25 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Casey
   LeftPage:
-  - 'Likes: '
-  - 'Dislikes:'
+  - "Likes: \n\tExercising alone with loud music"
+  - "Dislikes:\n\t"
   - 'Comfort Items:'
   - "Favorite Pastimes:\n\t"
   RightPage:
-  - 
-  - 
+  - "\"Strawberries are great for snacking on whenever I\u2019m feeling a bit down.\""
+  - '"My pet blueberry cow would look lovely with a little bow."'
   - 
   LeftUnlocked: 01010101
   RightUnlocked: 000000
   MatchingPair:
-  - Name: Item 6
+  - Name: Strawberry
     Icon: {fileID: 5339746376860689498, guid: 901e6c72bd4a6604c8c3c168b85a46a0, type: 3}
     Item: {fileID: 4466769377596933018, guid: 52aebcc2c967995468f1a7428e02687b, type: 3}
     Matched: 0
     RightPageIndex: 0
-  - Name: Item 7
+  - Name: Bow
     Icon: {fileID: 8515570557532065011, guid: ef440e0765c229c468f75ae8ff7ff6a3, type: 3}
     Item: {fileID: 5441654663335384034, guid: 88f0edbe8a236ff448e425301412f851, type: 3}
     Matched: 0
     RightPageIndex: 0
   NPCBody: {fileID: 5274458588370097386, guid: bb1c38409f29ec0449fb534ab29d2e15, type: 3}
+  LastStandingPos: {x: 0, y: 0}

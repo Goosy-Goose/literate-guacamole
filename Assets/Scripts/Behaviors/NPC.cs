@@ -6,37 +6,33 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
 {
     [SerializeField] private float speed = 1;
     [SerializeField] private Vector2 point;
-    float t;
+    float moveTime;
     float waitTime;
     float slowed;
+    bool bubbleOpen = false;
+    float bubbleCloseTime = float.NegativeInfinity;
+    float bubbleCloseWait = 5;
 
     public Transform MatchingItem1, MatchingItem2, Body, Bubble;
     public NPCJournalIcon journalIcon;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
-        point = new Vector2(Random.Range(-8,6), Random.Range(-3, 3));
-        waitTime = Random.Range(7, 17);
-        slowed = Random.Range(15, 25);
-        Bubble.gameObject.SetActive(true);
+        SetNewPos();
+        Bubble.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        t += Time.deltaTime * speed;
-
-        transform.position = Vector2.MoveTowards(transform.position, point, t/slowed);
-
-        if (t >= waitTime)
+        if (!bubbleOpen)
         {
-            point = new Vector2(Random.Range(-8, 6), Random.Range(-3, 3));
-            waitTime = Random.Range(7, 17);
-            t = 0;
+            HandleMovement();
         }
-
+        HandleBubbleClose();
         SetZdepth();
     }
 
@@ -49,7 +45,39 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
 
     private void OnMouseDown()
     {
+        
         Bubble.gameObject.SetActive(true);
+        bubbleOpen = true;
+        bubbleCloseTime = Time.fixedTime + bubbleCloseWait;
+    }
+
+    void HandleMovement()
+    {
+        if (moveTime <= Time.fixedTime)
+        {
+            SetNewPos();
+            moveTime = Time.fixedTime + waitTime;
+        }
+        transform.position = Vector2.MoveTowards(transform.position, point, speed * Time.deltaTime * slowed);
+    }
+
+
+
+    void HandleBubbleClose()
+    {
+
+        if (bubbleOpen && bubbleCloseTime <=Time.fixedTime)
+        {
+            bubbleOpen = false;
+            Bubble.gameObject.SetActive(false);
+        }
+    }
+
+    void SetNewPos()
+    {
+        point = FindObjectOfType<MatchingGame>().GetNewNPCPos(this);
+        waitTime = Random.Range(7, 17);
+        slowed = Random.Range(0.75f, 1.5f);
     }
 
     public void SetupNPC(NPCJournal npc)
@@ -60,5 +88,7 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
         GameObject icon2 = Instantiate(matchingIcons[1], MatchingItem2);
         GameObject NPCBody = Instantiate(npc.NPCBody, Body);
     }
+
+
 
 }

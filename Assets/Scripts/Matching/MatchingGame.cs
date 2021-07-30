@@ -9,10 +9,15 @@ public class MatchingGame : MonoBehaviour
     List<NPCJournal> ActiveJournals = new List<NPCJournal>();
     public Journal journal;
 
+    public BoxCollider2D[] Bounds;
+
+    public Transform[] shelfItem;
+
     // Start is called before the first frame update
     void Start()
     {
         LoadNPC();
+        LoadMatchItems();
         journal.MatchGameReturn = false;
     }
 
@@ -28,7 +33,24 @@ public class MatchingGame : MonoBehaviour
 
     private void LoadMatchItems()
     {
-
+        List<GameObject> items = GetItemsToMatch();
+        for(int i=0; i<items.Count; i += 1)
+        {
+            Transform shelf = shelfItem[i];
+            GameObject item = Instantiate(items[i], shelf.position, Quaternion.identity);
+        }
+    }
+    private List<GameObject> GetItemsToMatch()
+    {
+        List<GameObject> items = new List<GameObject>();
+        foreach(NPCJournal journal in NPCJournals)
+        {
+            foreach(MatchPair pair in journal.MatchingPair)
+            {
+                items.Add(pair.Item);
+            }
+        }
+        return items;
     }
 
     private void LoadNPC()
@@ -74,6 +96,16 @@ public class MatchingGame : MonoBehaviour
         }
 
         loading.LoadingButton("JournalTesting");
+    }
+
+    public Vector2 GetNewNPCPos(NPC npc)
+    {
+        Vector2 point = new Vector2(Random.Range(-6, 8), Random.Range(-3, 2));
+        //if(!Bounds[0].OverlapPoint(point))
+        {
+            point = new Vector2(Random.Range(-6, 10), Random.Range(-4, 2));
+        }
+        return point;
     }
 
 }
