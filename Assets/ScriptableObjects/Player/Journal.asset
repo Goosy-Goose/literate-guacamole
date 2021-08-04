@@ -2830,7 +2830,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a885af126d718994db126e7b1c13ff69, type: 2}
   - {fileID: 11400000, guid: 1bda7359a109740479d806cf638a1fd8, type: 2}
   NPCPage: {fileID: 11400000, guid: 1bda7359a109740479d806cf638a1fd8, type: 2}
-  PlayerJournal: 0
+  PlayerJournal: 1
   ReturnScene: Matching
   MatchGameNPCs:
   - {fileID: 11400000, guid: a885af126d718994db126e7b1c13ff69, type: 2}

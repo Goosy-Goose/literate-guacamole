@@ -5,15 +5,11 @@ using UnityEngine;
 public class MatchingIcon : MonoBehaviour
 {
     public MatchItem.ItemTypes ItemType;
-    // Start is called before the first frame update
-    void Start()
+    
+
+    public void Match()
     {
-        
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

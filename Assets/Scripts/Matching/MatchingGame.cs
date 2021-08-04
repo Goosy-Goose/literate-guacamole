@@ -16,6 +16,7 @@ public class MatchingGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ResetMatches();
         LoadNPC();
         LoadMatchItems();
         journal.MatchGameReturn = false;
@@ -37,7 +38,15 @@ public class MatchingGame : MonoBehaviour
         for(int i=0; i<items.Count; i += 1)
         {
             Transform shelf = shelfItem[i];
-            GameObject item = Instantiate(items[i], shelf.position, Quaternion.identity);
+            if (items[i].GetComponentInParent<MatchPair>().Matched)
+            {
+                GameObject item = Instantiate(items[i], shelf.position, Quaternion.identity);
+            }
+            //else
+            {
+                //GameObject item = Instantiate(new GameObject(), shelf.position, Quaternion.identity);
+            }
+            
         }
     }
     private List<GameObject> GetItemsToMatch()
@@ -67,7 +76,7 @@ public class MatchingGame : MonoBehaviour
         {
             for (int i = 0; i < 3; i += 1)
             {
-                Vector2 pos = new Vector2(-10, 3);
+                Vector2 pos = new Vector2(-8, .23f);
                 GameObject newNPC = Instantiate(NPCPrefab, pos, Quaternion.identity);
                 int index = Random.Range(0, available.Count);
                 newNPC.GetComponent<NPC>().SetupNPC(available[index]);
@@ -75,6 +84,20 @@ public class MatchingGame : MonoBehaviour
                 available.RemoveAt(index);
             }
             journal.MatchGameNPCs = ActiveJournals;
+        }
+    }
+
+    private void ResetMatches()
+    {
+        if(!journal.MatchGameReturn)
+        {
+            foreach(NPCJournal NPCJournal in NPCJournals)
+            {
+                foreach(MatchPair matchPair in NPCJournal.MatchingPair)
+                {
+                    matchPair.Matched = false;
+                }
+            }
         }
     }
 
@@ -100,12 +123,25 @@ public class MatchingGame : MonoBehaviour
 
     public Vector2 GetNewNPCPos(NPC npc)
     {
-        Vector2 point = new Vector2(Random.Range(-6, 8), Random.Range(-3, 2));
-        //if(!Bounds[0].OverlapPoint(point))
+        Vector2 point = Vector2.zero;
+        bool done = false;
+        while (!done)
         {
-            point = new Vector2(Random.Range(-6, 10), Random.Range(-4, 2));
+            point = new Vector2(Random.Range(-10, 10), Random.Range(-10, 2));
+            done = true;
+            foreach(BoxCollider2D bound in Bounds)
+            {
+                if (bound.OverlapPoint(point)) done = false;
+            }
         }
         return point;
+
+        /*Vector2 point = new Vector2(Random.Range(-6, 7), Random.Range(-3, 2));
+        if(!Bounds[0].OverlapPoint(point))
+        {
+            point = new Vector2(Random.Range(-6, 8), Random.Range(-3, 2));
+        }
+        return point;*/
     }
 
 }

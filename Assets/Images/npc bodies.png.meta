@@ -1,0 +1,612 @@
+fileFormatVersion: 2
+guid: bfe7c1deb2c458a4b91cdce9aacfbc21
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1340719309894340058
+    second: npc bodies_0
+  - first:
+      213: 3221110788223807068
+    second: npc bodies_1
+  - first:
+      213: -8245148403041860780
+    second: npc bodies_2
+  - first:
+      213: 503708672100918544
+    second: npc bodies_3
+  - first:
+      213: -7349843769217181305
+    second: npc bodies_4
+  - first:
+      213: 5304057221826569738
+    second: npc bodies_5
+  - first:
+      213: 1580352188836438478
+    second: npc bodies_6
+  - first:
+      213: 3378439784218170716
+    second: npc bodies_7
+  - first:
+      213: -454006635707409010
+    second: npc bodies_8
+  - first:
+      213: -765102263653749635
+    second: npc bodies_9
+  - first:
+      213: 2204770573636367287
+    second: npc bodies_10
+  - first:
+      213: 5023761577418958255
+    second: npc bodies_11
+  - first:
+      213: 2081061233971515714
+    second: npc bodies_12
+  - first:
+      213: 5155376665269481494
+    second: npc bodies_13
+  - first:
+      213: 1968009012501650764
+    second: npc bodies_14
+  - first:
+      213: 6239494261378256863
+    second: npc bodies_15
+  - first:
+      213: 2645141042304043768
+    second: npc bodies_16
+  - first:
+      213: -443635932024941384
+    second: npc bodies_17
+  - first:
+      213: -2976984780318598377
+    second: npc bodies_18
+  - first:
+      213: 5577082612629928191
+    second: npc bodies_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: npc bodies_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1550
+        width: 284
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add42c1eb113b9210800000000000000
+      internalID: 1340719309894340058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1571
+        width: 300
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5e224a123fa3bc20800000000000000
+      internalID: 3221110788223807068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_2
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1590
+        width: 300
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4538f4c4639539d80800000000000000
+      internalID: -8245148403041860780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_3
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1500
+        width: 284
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015ebd65e588df600800000000000000
+      internalID: 503708672100918544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_4
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1538
+        width: 284
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7891135780c100a90800000000000000
+      internalID: -7349843769217181305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1050
+        width: 284
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06615fe0fbcb9940800000000000000
+      internalID: 5304057221826569738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_6
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1071
+        width: 300
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec16b9351f98ee510800000000000000
+      internalID: 1580352188836438478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_7
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1090
+        width: 300
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c551f518511a2ee20800000000000000
+      internalID: 3378439784218170716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_8
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1000
+        width: 284
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d5df8ce5b03b9f0800000000000000
+      internalID: -454006635707409010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_9
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1038
+        width: 284
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7c221e7b8fc165f0800000000000000
+      internalID: -765102263653749635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 550
+        width: 284
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b374d4c72be89e10800000000000000
+      internalID: 2204770573636367287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_11
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 571
+        width: 300
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa52052a98cf7b540800000000000000
+      internalID: 5023761577418958255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_12
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 590
+        width: 300
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24155b69a2a61ec10800000000000000
+      internalID: 2081061233971515714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_13
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 500
+        width: 284
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610b9b043c39b8740800000000000000
+      internalID: 5155376665269481494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_14
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 538
+        width: 284
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4d9de815c5cf4b10800000000000000
+      internalID: 1968009012501650764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 50
+        width: 284
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf0a83f8f2279650800000000000000
+      internalID: 6239494261378256863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_16
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 71
+        width: 300
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fac65f63cd65b420800000000000000
+      internalID: 2645141042304043768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_17
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 90
+        width: 300
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4dd066873e7d9f0800000000000000
+      internalID: -443635932024941384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_18
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 284
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b9d537d10afa6d0800000000000000
+      internalID: -2976984780318598377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: npc bodies_19
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 38
+        width: 284
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff870d86617c56d40800000000000000
+      internalID: 5577082612629928191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 75bf499c2775d764fa62d5d318e7458b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

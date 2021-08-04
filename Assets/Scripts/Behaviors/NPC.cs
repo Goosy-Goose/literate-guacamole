@@ -21,7 +21,7 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
     // Start is called before the first frame update
     void Start()
     {
-        SetNewPos();
+        //SetNewPos();
         Bubble.gameObject.SetActive(false);
     }
 

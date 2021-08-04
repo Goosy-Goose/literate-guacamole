@@ -36,4 +36,4 @@ MonoBehaviour:
     Matched: 0
     RightPageIndex: 0
   NPCBody: {fileID: 5274458588370097386, guid: bb1c38409f29ec0449fb534ab29d2e15, type: 3}
-  LastStandingPos: {x: 0, y: 0}
+  LastStandingPos: {x: 1.5889128, y: -0.3111176}

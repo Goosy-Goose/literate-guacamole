@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  point: {x: 0, y: 0}
+  point: {x: -8, y: 1}
   MatchingItem1: {fileID: 9147808263532030116}
   MatchingItem2: {fileID: 3602521304269525989}
   Body: {fileID: 5168173465814036489}

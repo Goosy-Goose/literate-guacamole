@@ -27,18 +27,47 @@ public class MatchItem : SpriteTouch
 
     protected override void MouseUP()
     {
+        bool matched = false;
         List<Collider2D> results = new List<Collider2D>();
         ContactFilter2D filter = new ContactFilter2D();
         int count = GetComponent<Collider2D>().OverlapCollider(filter, results);
         foreach(Collider2D result in results)
-        { //result.GetComponent<NPC>().MatchingItem1.Equals(ItemType) || result.GetComponent<NPC>().MatchingItem2.Equals(ItemType)
+        { 
             if (result.GetComponent<NPC>())
             {
-                print("NPC Found: Check for matched item: " + result.GetComponent<NPC>().MatchingItem1.name);
-
+                NPC npc = result.GetComponent<NPC>();
+                if(npc.MatchingItem1.GetComponentInChildren<MatchingIcon>().ItemType == ItemType){
+                    print($"{ItemType} Found MatchingItem 1");
+                    CheckItemMatch(npc);
+                    npc.MatchingItem1.GetComponentInChildren<MatchingIcon>().Match();
+                    matched = true;
+                } else if(npc.MatchingItem2.GetComponentInChildren<MatchingIcon>().ItemType == ItemType) {
+                    print($"{ItemType} Found MatchingItem 2");
+                    CheckItemMatch(npc);
+                    npc.MatchingItem2.GetComponentInChildren<MatchingIcon>().Match();
+                    matched = true;
+                }
             }
         }
-        transform.position = BoardPos;
+        if (matched)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            transform.position = BoardPos;
+        }
+    }
+
+    private void CheckItemMatch(NPC npc)
+    {
+        foreach (MatchPair matchPair in npc.journalIcon.NPCPage.MatchingPair)
+        {
+            if (matchPair.Name.Equals(ItemType.ToString()))
+            {
+                matchPair.Matched = true;
+            }
+        }
     }
 
     private void OnMouseDown()
