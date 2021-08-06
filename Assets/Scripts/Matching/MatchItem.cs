@@ -5,7 +5,7 @@ using UnityEngine;
 public class MatchItem : SpriteTouch
 {
 
-    Vector2 BoardPos;
+    Vector3 BoardPos;
     Vector2 TouchOffset;
 
     public enum ItemTypes
@@ -80,7 +80,7 @@ public class MatchItem : SpriteTouch
         //Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition + TouchOffset);
         Vector2 currentPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(currentPos);
-        transform.position = mousePos + TouchOffset;
+        transform.position = (Vector3)(mousePos + TouchOffset) + Vector3.forward*(-9);
     }
 
     // Start is called before the first frame update

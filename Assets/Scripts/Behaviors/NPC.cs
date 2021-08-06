@@ -17,6 +17,8 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
     public NPCJournalIcon journalIcon;
 
 
+    public float animSpeed = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,12 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
         }
         HandleBubbleClose();
         SetZdepth();
+
+    }
+
+    private void Update()
+    {
+        GetComponent<Animator>().SetFloat("Speed", animSpeed);
     }
 
     void SetZdepth()
@@ -58,6 +66,7 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
             SetNewPos();
             moveTime = Time.fixedTime + waitTime;
         }
+        animSpeed = ((Vector2)transform.position - Vector2.MoveTowards(transform.position, point, speed * Time.deltaTime * slowed)).magnitude/Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, point, speed * Time.deltaTime * slowed);
     }
 
