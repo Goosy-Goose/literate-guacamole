@@ -13,6 +13,8 @@ public class MatchingGame : MonoBehaviour
 
     public Transform[] shelfItem;
 
+    public int numMatched;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,72 +36,70 @@ public class MatchingGame : MonoBehaviour
 
     private void LoadMatchItems()
     {
-        List<GameObject> items = GetItemsToMatch();
-        //for(int i=0; i<NPCJournal.Count; i += 1)
+        
+
+        List<MatchPair> listOfShelfPlaces = new List<MatchPair>(); //index Transform[] shelfItem; (same size, use this list to instantiate items) size 5 [0,1,2, -3, -6]
+
+        if (!journal.MatchGameReturn)
         {
+            //List<int> listOfNPCItemsIndex = new List<int>(); //index MatchingItems[] ActiveJournals.MatchingItems [0,1,2]
+            List<MatchPair> listOfNPCItems = new List<MatchPair>();
+            //List<int> ListOfExtraNPCItemsIndex = new List<int>(); // index MatchingItems[] NPCJournals.MatchingItems - listOfNPCItems [-1, -2, -3, -4, -5, -6]
+            List<MatchPair> ListOfExtraNPCItems = new List<MatchPair>();
 
-        }
-        /*List<GameObject> items = GetItemsToMatch();
-        for(int i=0; i<NPCJournals.Length; i += 1)
-        {
-            foreach(MatchPair pair in NPCJournals[i].MatchingPair)
+            foreach (NPCJournal npc in ActiveJournals)
             {
-
-            }
-            Transform shelf = shelfItem[i];
-            if ()
-            {
-                GameObject item = Instantiate(items[i], shelf.position, Quaternion.identity);
-            }
-            //else
-            {
-                //GameObject item = Instantiate(new GameObject(), shelf.position, Quaternion.identity);
-            }
-            
-        }*/
-
-        List<GameObject> listOfShelfPlaces = new List<GameObject>(); //index Transform[] shelfItem; (same size, use this list to instantiate items) size 5 [0,1,2, -3, -6]
-        List<int> listOfNPCItemsIndex = new List<int>(); //index MatchingItems[] ActiveJournals.MatchingItems [0,1,2]
-        List<GameObject> listOfNPCItems = new List<GameObject>();
-        List<int> ListOfExtraNPCItemsIndex = new List<int>(); // index MatchingItems[] NPCJournals.MatchingItems - listOfNPCItems [-1, -2, -3, -4, -5, -6]
-        List<GameObject> ListOfExtraNPCItems = new List<GameObject>();
-
-        foreach (NPCJournal npc in ActiveJournals)
-        {
-            foreach (MatchPair matchPair in npc.MatchingPair)
-            {
-                listOfNPCItems.Add(matchPair.Item);
-            }
-        }
-
-        //populate the listOfExtraNPCItmes
-        foreach(NPCJournal NPCJournal in NPCJournals)
-        {
-            foreach(MatchPair matchPair in NPCJournal.MatchingPair)
-            {
-                if (!listOfNPCItems.Contains(matchPair.Item))
+                foreach (MatchPair matchPair in npc.MatchingPair)
                 {
-                    ListOfExtraNPCItems.Add(matchPair.Item);
+                    listOfNPCItems.Add(matchPair);
                 }
-                
             }
-        }
 
-        while(listOfShelfPlaces.Count < shelfItem.Length && listOfNPCItems.Count > 0)
-        {
-            listOfShelfPlaces.Add(listOfNPCItems[0]);
-            listOfNPCItems.RemoveAt(0);
+            //populate the listOfExtraNPCItmes
+            foreach (NPCJournal NPCJournal in NPCJournals)
+            {
+                foreach (MatchPair matchPair in NPCJournal.MatchingPair)
+                {
+                    if (!listOfNPCItems.Contains(matchPair))
+                    {
+                        ListOfExtraNPCItems.Add(matchPair);
+                    }
+
+                }
+            }
+
+            while (listOfShelfPlaces.Count < shelfItem.Length && listOfNPCItems.Count > 0)
+            {
+                listOfShelfPlaces.Add(listOfNPCItems[0]);
+                listOfNPCItems.RemoveAt(0);
+            }
+            while (listOfShelfPlaces.Count < shelfItem.Length && ListOfExtraNPCItems.Count > 0)
+            {
+                listOfShelfPlaces.Add(ListOfExtraNPCItems[0]);
+                ListOfExtraNPCItems.RemoveAt(0);
+            }
+
+            for (int i = 0; i < listOfShelfPlaces.Count; i += 1)
+            {
+                int j = Random.Range(0, listOfShelfPlaces.Count);
+                MatchPair temp = listOfShelfPlaces[i];
+                listOfShelfPlaces[i] = listOfShelfPlaces[j];
+                listOfShelfPlaces[j] = temp;
+            }
+
+            journal.ListOfShelfPlaces = listOfShelfPlaces;
         }
-        while (listOfShelfPlaces.Count < shelfItem.Length && ListOfExtraNPCItems.Count > 0)
+        else
         {
-            listOfShelfPlaces.Add(ListOfExtraNPCItems[0]);
-            ListOfExtraNPCItems.RemoveAt(0);
+            listOfShelfPlaces = journal.ListOfShelfPlaces;
         }
-        //listOfShelfPlaces.Shuffle() just shuffle the list
         
         for(int i=0; i<listOfShelfPlaces.Count; i += 1)
         {
-            GameObject item = Instantiate(listOfShelfPlaces[i], shelfItem[i]);
+            if (!listOfShelfPlaces[i].Matched)
+            {
+                GameObject item = Instantiate(listOfShelfPlaces[i].Item, shelfItem[i]);
+            }
         }
     }
 
@@ -182,7 +182,7 @@ public class MatchingGame : MonoBehaviour
         bool done = false;
         while (!done)
         {
-            point = new Vector2(Random.Range(-10, 10), Random.Range(-10, 2));
+            point = new Vector2(Random.Range(-10f, 10f), Random.Range(-10f, 2f));
             done = true;
             foreach(BoxCollider2D bound in Bounds)
             {
@@ -190,13 +190,6 @@ public class MatchingGame : MonoBehaviour
             }
         }
         return point;
-
-        /*Vector2 point = new Vector2(Random.Range(-6, 7), Random.Range(-3, 2));
-        if(!Bounds[0].OverlapPoint(point))
-        {
-            point = new Vector2(Random.Range(-6, 8), Random.Range(-3, 2));
-        }
-        return point;*/
     }
 
 }

@@ -14,6 +14,7 @@ public class Journal : ScriptableObject
     public bool PlayerJournal;
     public string ReturnScene;
     public List<NPCJournal> MatchGameNPCs;
+    public List<MatchPair> ListOfShelfPlaces;
     public bool MatchGameReturn;
 
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING (how???)
 {
@@ -19,6 +20,8 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
 
     public float animSpeed = 0;
 
+    GameObject NPCBody;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,10 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
         {
             HandleMovement();
         }
+        else
+        {
+            animSpeed = 0;
+        }
         HandleBubbleClose();
         SetZdepth();
 
@@ -42,6 +49,7 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
     private void Update()
     {
         GetComponent<Animator>().SetFloat("Speed", animSpeed);
+
     }
 
     void SetZdepth()
@@ -53,10 +61,17 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
 
     private void OnMouseDown()
     {
+        if (FindObjectOfType<MatchingGame>())
+        {
+            Bubble.gameObject.SetActive(true);
+            bubbleOpen = true;
+            bubbleCloseTime = Time.fixedTime + bubbleCloseWait;
+        }
+        if(FindObjectOfType<Field>())
+        {
+            FindObjectOfType<Field>().LoadNPCJournalButton(journalIcon.NPCPage);
+        }
         
-        Bubble.gameObject.SetActive(true);
-        bubbleOpen = true;
-        bubbleCloseTime = Time.fixedTime + bubbleCloseWait;
     }
 
     void HandleMovement()
@@ -66,8 +81,17 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
             SetNewPos();
             moveTime = Time.fixedTime + waitTime;
         }
-        animSpeed = ((Vector2)transform.position - Vector2.MoveTowards(transform.position, point, speed * Time.deltaTime * slowed)).magnitude/Time.deltaTime;
+        Vector2 speedVec = (Vector2)transform.position - Vector2.MoveTowards(transform.position, point, speed * Time.deltaTime * slowed);
+        animSpeed = speedVec.magnitude/Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, point, speed * Time.deltaTime * slowed);
+
+        if(speedVec.x > 0)
+        {
+            NPCBody.GetComponent<SpriteRenderer>().flipX = true;
+        }else if (speedVec.x < 0)
+        {
+            NPCBody.GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
 
@@ -84,18 +108,46 @@ public class NPC : MonoBehaviour //ADD A CHECK TO SEE IF THINGS ARE OVERLAPPING 
 
     void SetNewPos()
     {
-        point = FindObjectOfType<MatchingGame>().GetNewNPCPos(this);
-        waitTime = Random.Range(7, 17);
-        slowed = Random.Range(0.75f, 1.5f);
+        if (SceneManager.GetActiveScene().name.Equals("Matching"))
+        {
+            point = FindObjectOfType<MatchingGame>().GetNewNPCPos(this);
+            waitTime = Random.Range(7, 17);
+            slowed = Random.Range(0.75f, 1.5f);
+        }
+        if (SceneManager.GetActiveScene().name.Equals("MainField"))
+        {
+            point = FindObjectOfType<Field>().GetNewNPCPos();
+            waitTime = Random.Range(20, 37);
+            slowed = Random.Range(0.75f, 1.5f);
+        }
+        
     }
 
     public void SetupNPC(NPCJournal npc)
     {
-        journalIcon.SetNPCJournal(npc);
-        GameObject[] matchingIcons = npc.GetMatchingIcons();
-        GameObject icon1 = Instantiate(matchingIcons[0], MatchingItem1);
-        GameObject icon2 = Instantiate(matchingIcons[1], MatchingItem2);
-        GameObject NPCBody = Instantiate(npc.NPCBody, Body);
+        if (SceneManager.GetActiveScene().name.Equals("Matching"))
+        {
+            journalIcon.SetNPCJournal(npc);
+            GameObject[] matchingIcons = npc.GetMatchingIcons();
+            if (matchingIcons[0])
+            {
+                Instantiate(matchingIcons[0], MatchingItem1);
+            }
+            if (matchingIcons[1])
+            {
+                Instantiate(matchingIcons[1], MatchingItem2);
+            }
+            NPCBody = Instantiate(npc.NPCBody, Body);
+            NPCBody.transform.position = Body.position;
+        }
+
+        if (SceneManager.GetActiveScene().name.Equals("MainField"))
+        {
+            journalIcon.SetNPCJournal(npc);
+            NPCBody = Instantiate(npc.NPCBody, Body);
+            NPCBody.transform.position = Body.position;
+        }
+        
     }
 
 

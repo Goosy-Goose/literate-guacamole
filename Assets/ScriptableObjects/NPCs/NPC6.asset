@@ -24,17 +24,17 @@ MonoBehaviour:
   - '"I love basil but we just ran out so I need to get some for dinner really quickly."'
   - 
   LeftUnlocked: 01010101
-  RightUnlocked: 000000
+  RightUnlocked: 010101
   MatchingPair:
   - Name: Seashell
     Icon: {fileID: 3698495090937301907, guid: ecf4252619ea31e44990678173d25fc2, type: 3}
     Item: {fileID: 6076058987148331778, guid: 10da27014d21cd940941922baeef591b, type: 3}
-    Matched: 0
+    Matched: 1
     RightPageIndex: 0
   - Name: Basil
     Icon: {fileID: 999228024421019205, guid: b3f1139dcac60e64087561ff435c9303, type: 3}
     Item: {fileID: 8337979157019297803, guid: fc914cc9b18a1ba43a181dfe73dccd6e, type: 3}
-    Matched: 0
+    Matched: 1
     RightPageIndex: 0
   NPCBody: {fileID: 3656600059268194175, guid: 8780a2d065c710a4ba05940277582469, type: 3}
-  LastStandingPos: {x: 0, y: 0}
+  LastStandingPos: {x: -2.9852064, y: 0.16390821}

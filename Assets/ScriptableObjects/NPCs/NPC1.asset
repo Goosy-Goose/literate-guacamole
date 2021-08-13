@@ -30,17 +30,17 @@ MonoBehaviour:
   - Tabby got into woodcarving to give her cat something to play with, but Vou likes
     to play with the wood shavings more.
   LeftUnlocked: 01010101
-  RightUnlocked: 00010101
+  RightUnlocked: 01010101
   MatchingPair:
   - Name: Book
     Icon: {fileID: 7881436523680364725, guid: 2172007e235708245b288dd048a02450, type: 3}
     Item: {fileID: 210839837823128024, guid: 8a94876e33dd2d546ac5495d75778a79, type: 3}
-    Matched: 0
+    Matched: 1
     RightPageIndex: 0
   - Name: Flower
     Icon: {fileID: 5827955663464275556, guid: 68b77b6d8ed8de3418201fc46ac36045, type: 3}
     Item: {fileID: 5635544736599527125, guid: f670e9730dde5db4a8b83b6fff70d554, type: 3}
-    Matched: 0
+    Matched: 1
     RightPageIndex: 0
   NPCBody: {fileID: 8250018470735996870, guid: fe50953b919b78e4091126a363f6e111, type: 3}
-  LastStandingPos: {x: -7, y: 0}
+  LastStandingPos: {x: -0.63356304, y: -2.730987}

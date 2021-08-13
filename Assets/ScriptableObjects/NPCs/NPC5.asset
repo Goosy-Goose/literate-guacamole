@@ -25,17 +25,17 @@ MonoBehaviour:
     looking to learn a new instrument to bring it back. Maybe a violin?\""
   - 
   LeftUnlocked: 01010101
-  RightUnlocked: 000000
+  RightUnlocked: 010101
   MatchingPair:
   - Name: Ribbon
     Icon: {fileID: 1323183575174342229, guid: 98d03a0dd2f55514d87689f1fab1fe7e, type: 3}
     Item: {fileID: 252429944515556761, guid: 82c2c5ba3da3b364c87b060a91f538ed, type: 3}
-    Matched: 0
+    Matched: 1
     RightPageIndex: 0
   - Name: Violin
     Icon: {fileID: 3240049704664419194, guid: af65191adcdb2e3449da0e2e9795f0a0, type: 3}
     Item: {fileID: 2670935401892216511, guid: 53c9b938b5aba344ba2eb4ada7a786d6, type: 3}
-    Matched: 0
+    Matched: 1
     RightPageIndex: 0
   NPCBody: {fileID: 7572904634044954037, guid: 02479cd761c49da498b42968f86622ba, type: 3}
-  LastStandingPos: {x: 0, y: 0}
+  LastStandingPos: {x: 1.2823496, y: -8.89707}

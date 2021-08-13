@@ -23,7 +23,7 @@ MonoBehaviour:
   - '"My pet blueberry cow would look lovely with a little bow."'
   - 
   LeftUnlocked: 01010101
-  RightUnlocked: 000000
+  RightUnlocked: 010101
   MatchingPair:
   - Name: Strawberry
     Icon: {fileID: 5339746376860689498, guid: 901e6c72bd4a6604c8c3c168b85a46a0, type: 3}

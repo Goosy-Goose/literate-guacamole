@@ -16,5 +16,5 @@ public class NPCJournalIcon : SpriteTouch
         NPCPage = journal;
     }
 
-
+    
 }

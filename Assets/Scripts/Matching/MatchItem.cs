@@ -36,17 +36,33 @@ public class MatchItem : SpriteTouch
             if (result.GetComponent<NPC>())
             {
                 NPC npc = result.GetComponent<NPC>();
-                if(npc.MatchingItem1.GetComponentInChildren<MatchingIcon>().ItemType == ItemType){
-                    print($"{ItemType} Found MatchingItem 1");
-                    CheckItemMatch(npc);
-                    npc.MatchingItem1.GetComponentInChildren<MatchingIcon>().Match();
-                    matched = true;
-                } else if(npc.MatchingItem2.GetComponentInChildren<MatchingIcon>().ItemType == ItemType) {
-                    print($"{ItemType} Found MatchingItem 2");
-                    CheckItemMatch(npc);
-                    npc.MatchingItem2.GetComponentInChildren<MatchingIcon>().Match();
-                    matched = true;
+                if (npc.MatchingItem1.GetComponentInChildren<MatchingIcon>())
+                {
+                    if (npc.MatchingItem1.GetComponentInChildren<MatchingIcon>().ItemType == ItemType)
+                    {
+                        print($"{ItemType} Found MatchingItem 1");
+                        CheckItemMatch(npc);
+                        npc.MatchingItem1.GetComponentInChildren<MatchingIcon>().Match();
+                        matched = true;
+                    }
+
                 }
+                if (npc.MatchingItem2.GetComponentInChildren<MatchingIcon>())
+                {
+                    if (npc.MatchingItem2.GetComponentInChildren<MatchingIcon>().ItemType == ItemType)
+                    {
+                        print($"{ItemType} Found MatchingItem 2");
+                        CheckItemMatch(npc);
+                        npc.MatchingItem2.GetComponentInChildren<MatchingIcon>().Match();
+                        matched = true;
+
+                    }
+                }
+                
+            }
+            else
+            {
+                print($"{ItemType} Item not found");
             }
         }
         if (matched)

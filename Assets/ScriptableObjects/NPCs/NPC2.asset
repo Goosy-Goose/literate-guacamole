@@ -28,7 +28,7 @@ MonoBehaviour:
     that ruin his midday nap in the shade. This is the reason he has grown to dislike
     people who disregard other people's feelings
   LeftUnlocked: 01010101
-  RightUnlocked: 01000001
+  RightUnlocked: 01010101
   MatchingPair:
   - Name: Sunglasses
     Icon: {fileID: 6773686511459202365, guid: 3f30388648625774a87f036f6951681c, type: 3}
@@ -41,4 +41,4 @@ MonoBehaviour:
     Matched: 0
     RightPageIndex: 0
   NPCBody: {fileID: 6471076760999372792, guid: e3abf948699718146ad065e2efee3cf6, type: 3}
-  LastStandingPos: {x: 1, y: 2}
+  LastStandingPos: {x: -2.2917738, y: 0.339651}

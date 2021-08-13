@@ -67,8 +67,16 @@ public class NPCJournal : ScriptableObject
         GameObject[] matchingIcons = new GameObject[2];
         if (MatchingPair.Length == 2)
         {
-            matchingIcons[0] = MatchingPair[0].Icon;
-            matchingIcons[1] = MatchingPair[1].Icon;
+            if (!MatchingPair[0].Matched)
+            {
+                matchingIcons[0] = MatchingPair[0].Icon;
+                Debug.Log(Name + " Matching Icon 1");
+            }
+            if (!MatchingPair[1].Matched)
+            {
+                matchingIcons[1] = MatchingPair[1].Icon;
+                Debug.Log(Name + " Matching Icon 2");
+            }
         }
         else if (MatchingPair.Length == 1)
         {
