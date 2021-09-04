@@ -13,6 +13,13 @@ public static class DataCollection
         writer.WriteLine(data);
         writer.Close();
     }
+    public static void WriteToFile(string data, string file, bool append)
+    {
+        if (Application.isEditor) file = "Assets/" + file;
+        StreamWriter writer = new StreamWriter(file, append);
+        writer.WriteLine(data);
+        writer.Close();
+    }
 
     public static string ReadFile(string file)
     {

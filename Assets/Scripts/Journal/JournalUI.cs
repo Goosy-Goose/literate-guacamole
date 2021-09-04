@@ -55,10 +55,10 @@ public class JournalUI : MonoBehaviour
     bool secondDayEntry = false;
     private bool ValidNewEntry()
     {
-        if( journal.pagePool.Count == 0)
+        if( journal.pages.Count == 0)
         {
             return true;
-        } else if (journal.pagePool.Count == 1)
+        } else if (journal.pages.Count == 1)
         {
             if(journal.pages[journal.pages.Count - 1].Date == Utility.GetDate())
             {
