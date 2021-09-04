@@ -23,6 +23,11 @@ public class Loading : MonoBehaviour
             journal.PlayerJournal = false;
             journal.NPCPage = NPCPage;
         }
+        
+        if(sceneName == "MainField" && FindObjectOfType<MatchingGame>())
+        {
+            FindObjectOfType<MatchingGame>().OnExit();
+        }
         SceneManager.LoadScene(sceneName);
     }
 }

@@ -51,9 +51,38 @@ public class JournalUI : MonoBehaviour
         }
     }
 
+    bool firstDayEntry = false;
+    bool secondDayEntry = false;
     private bool ValidNewEntry()
     {
-        return journal.pages[journal.pages.Count - 1].Date != Utility.GetDate();
+        if( journal.pagePool.Count == 0)
+        {
+            return true;
+        } else if (journal.pagePool.Count == 1)
+        {
+            if(journal.pages[journal.pages.Count - 1].Date == Utility.GetDate())
+            {
+                firstDayEntry = true;
+                
+            }
+            return true;
+        }
+        else if(journal.pages[journal.pages.Count - 2].Date != Utility.GetDate())
+        {
+            if (journal.pages[journal.pages.Count - 1].Date == Utility.GetDate())
+            {
+                firstDayEntry = true;
+
+            }
+            return true;
+        }
+        else
+        {
+            firstDayEntry = true;
+            secondDayEntry = true;
+            return false;
+        }
+        
     }
 
     public void OpenNPCJournal()
@@ -75,6 +104,14 @@ public class JournalUI : MonoBehaviour
             DisplayPageEntry(false);
             pageIndex = journal.pages.Count - 1;
             DisplayPageHistory(page);
+            if (firstDayEntry)
+            {
+                DataCollection.FeelingsData(false, page.Answer1.ToString());
+            }
+            else
+            {
+                DataCollection.FeelingsData(true, page.Answer1.ToString());
+            }
         }
         
     }

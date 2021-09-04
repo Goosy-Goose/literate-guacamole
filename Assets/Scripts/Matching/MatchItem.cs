@@ -8,6 +8,7 @@ public class MatchItem : SpriteTouch
     Vector3 BoardPos;
     Vector2 TouchOffset;
 
+    bool matchAttempted;
     public enum ItemTypes
     {
         Book,
@@ -32,9 +33,10 @@ public class MatchItem : SpriteTouch
         ContactFilter2D filter = new ContactFilter2D();
         int count = GetComponent<Collider2D>().OverlapCollider(filter, results);
         foreach(Collider2D result in results)
-        { 
+        {
             if (result.GetComponent<NPC>())
             {
+                matchAttempted = true;
                 NPC npc = result.GetComponent<NPC>();
                 if (npc.MatchingItem1.GetComponentInChildren<MatchingIcon>())
                 {
@@ -54,8 +56,7 @@ public class MatchItem : SpriteTouch
                         print($"{ItemType} Found MatchingItem 2");
                         CheckItemMatch(npc);
                         npc.MatchingItem2.GetComponentInChildren<MatchingIcon>().Match();
-                        matched = true;
-
+                        matched = true;  
                     }
                 }
                 
@@ -63,15 +64,18 @@ public class MatchItem : SpriteTouch
             else
             {
                 print($"{ItemType} Item not found");
+                
             }
         }
         if (matched)
         {
             gameObject.SetActive(false);
+            FindObjectOfType<MatchingGame>().MatchedItem(true);
         }
         else
         {
             transform.position = BoardPos;
+            if(!matchAttempted)FindObjectOfType<MatchingGame>().MatchedItem(false);
         }
     }
 

@@ -13,12 +13,18 @@ public class MatchingGame : MonoBehaviour
 
     public Transform[] shelfItem;
 
-    public int numMatched;
+    public static int numMatched;
+    public static int score;
+    public static float startTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        ResetMatches();
+        if (!journal.MatchGameReturn)
+        {
+            ResetMatches();
+            startTime = Time.time;
+        }
         LoadNPC();
         LoadMatchItems();
         journal.MatchGameReturn = false;
@@ -32,6 +38,12 @@ public class MatchingGame : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnExit()
+    {
+        DataCollection.MatchGameData((int)(Time.time - startTime));
+        DataCollection.MatchGameData(score, numMatched >= 6);
     }
 
     private void LoadMatchItems()
@@ -103,6 +115,19 @@ public class MatchingGame : MonoBehaviour
         }
     }
 
+    public void MatchedItem(bool correct)
+    {
+        if (correct)
+        {
+            score += 2;
+            numMatched += 1;
+        }
+        else
+        {
+            score -= 1;
+        }
+    }
+
 
     private List<GameObject> GetItemsToMatch()
     {
@@ -144,16 +169,15 @@ public class MatchingGame : MonoBehaviour
 
     private void ResetMatches()
     {
-        if(!journal.MatchGameReturn)
+        foreach(NPCJournal NPCJournal in NPCJournals)
         {
-            foreach(NPCJournal NPCJournal in NPCJournals)
+            foreach(MatchPair matchPair in NPCJournal.MatchingPair)
             {
-                foreach(MatchPair matchPair in NPCJournal.MatchingPair)
-                {
-                    matchPair.Matched = false;
-                }
+                matchPair.Matched = false;
             }
         }
+        score = 0;
+        numMatched = 0;
     }
 
 

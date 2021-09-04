@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/JournalTesting.unity
-    guid: e0fc1a90145cc4e41adcdd99ab451c16
-  - enabled: 1
     path: Assets/Scenes/MainField.unity
     guid: 4b12617a8e33a92438c50e0acebb562a
+  - enabled: 1
+    path: Assets/Scenes/JournalTesting.unity
+    guid: e0fc1a90145cc4e41adcdd99ab451c16
   - enabled: 1
     path: Assets/Scenes/Matching.unity
     guid: fc14b802422c9e441a7feefd83e1be39
