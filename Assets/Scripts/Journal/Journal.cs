@@ -10,6 +10,7 @@ public class Journal : ScriptableObject
     public PageEntries pageEntries;
     public List<PageEntry> pages { get { return pageEntries.pages; } }
     public string JournalJSONPath = "Resources/journal1.txt";
+    public TextAsset JsonFile;
 
     //public List<PageEntry> pagePool = new List<PageEntry>();
 
@@ -42,7 +43,7 @@ public class Journal : ScriptableObject
 
     public static string GetFile(string name)
     {
-        string path = Application.dataPath + "/" + name;
+        string path = (Application.isEditor)?  "Assets/"  + name:  name;
         StreamReader reader = new StreamReader(path);
 
         string contents = reader.ReadToEnd();

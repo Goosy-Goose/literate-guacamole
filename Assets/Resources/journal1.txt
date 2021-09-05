@@ -1,16 +1,10 @@
 {
     "pages": [
         {
-            "Date": "09/04/2021",
+            "Date": "09/05/2021",
             "Answer1": 1,
             "Answer2": "1",
-            "Answer3": "2"
-        },
-        {
-            "Date": "09/04/2021",
-            "Answer1": 1,
-            "Answer2": "2",
-            "Answer3": "3"
+            "Answer3": "1"
         }
     ]
 }

@@ -166,7 +166,7 @@ public class JournalUI : MonoBehaviour
         {
             pageIndex -= 1;
             DisplayPageHistory(journal.pages[pageIndex]);
-        } else if(pageIndex == journal.pages.Count)
+        } else if(pageIndex > 0 && pageIndex == journal.pages.Count)
         {
             pageIndex -= 1;
             DisplayPageHistory(journal.pages[pageIndex]);
